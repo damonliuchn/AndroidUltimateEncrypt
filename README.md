@@ -12,7 +12,7 @@ AndroidUltimateEncrypt AndroidJNI Encrypt ，运用JNI读取签名，然后把�
 
 ##欢迎批评指正
 
-博客：http://blog.csdn.net/masonblog
+博客：http://www.dd544.com
 邮箱：MasonLiuChn@gmail.com
 
 
