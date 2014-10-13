@@ -15,5 +15,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/str2" 
         android:inputType="textMultiLine"/>
+       
+       <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/str3" 
+        android:inputType="textMultiLine"
+        android:background="#ffffff"/>
 
 </LinearLayout>

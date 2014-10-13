@@ -1,7 +1,5 @@
-
 #include <jni.h>
-
-
+#include "md52.c"
 
 #ifdef __cplusplus
 
