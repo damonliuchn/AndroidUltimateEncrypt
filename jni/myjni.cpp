@@ -1,60 +1,24 @@
 #include <string>
 #include <stdio.h>
-#include <wchar.h>
 #include "myjni.h"
 
 //char* to jstring
 
 jstring getMD5(JNIEnv* env, jstring jInfo) {
-//		MD5_CTX md5;
-//	    MD5Init(&md5);
 	    int i;
-//	    unsigned char encrypt[] ="admin";//21232f297a57a5a743894a0e4a801fc3
-//	    //const char *a  = (env)->GetStringUTFChars(jInfo, NULL);
-//	    //unsigned char * encrypt = (unsigned char *)a;
-//	    unsigned char decrypt[16];
-//	    MD5Update(&md5,encrypt,strlen((char *)encrypt));
-//	    MD5Final(&md5,decrypt);
-////	    printf("加密前:%s\n加密后:",encrypt);
-//
-//
-//	    char destination[16]={0};
-//	    for (i = 0; i < 16; i++) {
-//	            sprintf(destination, "%s%02x", destination, decrypt[i]);
-//	    }
-//
-//
-//
-//
-//	    //const char* b = static_cast<const char*>( static_cast<void*>( const_cast<unsigned char*>(decrypt)));
-//	    unsigned char h[16]="23445F";
-//	    //		  jstring test2 = env->NewString(szDigest,wcslen(szDigest));
-//	    		  //unsigned char * ucptest=L"somestring";
-//	    jstring test1;
-//	    std::string str(reinterpret_cast<const char*>(decrypt));
-//	    test1 = env->NewStringUTF(str.c_str());
-//	    return env->NewStringUTF(destination);
-
-
-		  unsigned char szDigest[16];
-		  char encrypt[200]="123456";
-		  MD5Digest(encrypt,strlen(encrypt),szDigest);
-//		  int i;
-//		  for (i=0;i<16;i++)
-//			  printf ("%02X",(unsigned char)szDigest[i]);
-
-//		  unsigned char h[16]="23445F";
-////		  jstring test2 = env->NewString(szDigest,wcslen(szDigest));
-//		  //unsigned char * ucptest=L"somestring";
-//		  jstring test1;
-//		  std::string str(reinterpret_cast<const char*>(szDigest));
-//		  test1 = env->NewStringUTF(str.c_str());
-
-		  char destination[16]={0};
-		  for (i = 0; i < 8; i++) {
-		  	     sprintf(destination, "%s%02x", destination, szDigest[i]);
-		  }
-		  return env->NewStringUTF(destination);
+	    const char *info  = (env)->GetStringUTFChars(jInfo, NULL);
+	    char * a=(char *)info;
+	    //return env->NewStringUTF(encrypt);
+		//char * a="123456";
+		char encrypt[300] = {0};
+		strcpy(encrypt ,a);
+	    unsigned char szDigest[16];
+		MD5Digest(encrypt,strlen(encrypt),szDigest);
+		char destination[16]={0};
+		for (i = 0; i < 8; i++) {
+			sprintf(destination, "%s%02x", destination, szDigest[i]);
+		}
+		return env->NewStringUTF(destination);
 }
 jstring getAppendedString(JNIEnv* env,jobject thiz, jstring s1,jstring s2) {
 
