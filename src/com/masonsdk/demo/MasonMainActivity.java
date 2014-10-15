@@ -28,7 +28,7 @@ public class MasonMainActivity extends Activity {
 		setContentView(R.layout.main);
 
 		EditText str1 = (EditText) this.findViewById(R.id.str1);
-		str1.setText(JNIUtil.getPWD(this));
+		str1.setText(JNIUtil.getPwd(this));
 
 		 try {
 			 PackageInfo info =getPackageManager().getPackageInfo(getPackageName(), 64);

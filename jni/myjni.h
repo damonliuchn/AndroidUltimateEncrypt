@@ -5,7 +5,7 @@
 
 extern "C" {
 
-jstring Java_com_masonsdk_jni_JNIUtil_getPWD(JNIEnv *, jobject,jobject);
+jstring Java_com_masonsdk_jni_JNIUtil_getPwdOriginal(JNIEnv *, jobject,jobject);
 
 }
 

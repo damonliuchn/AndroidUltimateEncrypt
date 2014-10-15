@@ -6,16 +6,14 @@ public class JNIUtil {
 	static {
 		System.loadLibrary("masonsdkjni");
 	}
-	public static String pwd;
-	public static String getCachePwd(Context con){
+	private static String pwd;
+	public static String getPwd(Context con){
 		if (pwd==null) {
-			pwd=getPWD(con);
+			pwd=getPwdOriginal(con);
 		}
 		return pwd;
 	}
 	
-	public static native String getPWD(Context con);
-
-	public native String stringFromJNI2(String str);
+	private static native String getPwdOriginal(Context con);
 
 }

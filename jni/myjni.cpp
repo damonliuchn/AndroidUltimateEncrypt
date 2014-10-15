@@ -94,7 +94,7 @@ jstring getSerialNumber(JNIEnv *env,jobject thiz,jobject mContext)
 	jobject deviceid = (env)->CallStaticObjectMethod(cls_tm, getDeviceId,param1, param2);
 	return (jstring)deviceid;
 }
-jstring Java_com_masonsdk_jni_JNIUtil_getPWD(JNIEnv* env, jobject thizz,jobject thiz){
+jstring Java_com_masonsdk_jni_JNIUtil_getPwdOriginal(JNIEnv* env, jobject thizz,jobject thiz){
 
 
 		jclass native_clazz = env->GetObjectClass(thiz);
@@ -151,6 +151,6 @@ jstring Java_com_masonsdk_jni_JNIUtil_getPWD(JNIEnv* env, jobject thizz,jobject 
 	    jstring sign=env->NewStringUTF(str);
 	    jstring imei_sign=getAppendedString(env, thizz,imei,sign);
 	    jstring imei_sign_package=getAppendedString(env,thizz,imei_sign,name_str);
+	    //请在上边再加入自己的移位或替换 或其他加密算法
 	    return getMD5(env,imei_sign_package);
-	    //return imei_sign_package;
 }
