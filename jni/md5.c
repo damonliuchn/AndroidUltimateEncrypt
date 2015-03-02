@@ -199,12 +199,12 @@ inline   void   MD5Final(unsigned   char   digest[16],   MD5_CTX   *context)
   memset   ((POINTER)context,   0,   sizeof   (*context));
   }
 
-void   MD5Digest(char   *pszInput,   unsigned   long   nInputSize,   unsigned char   *pszOutPut)
+void   MD5Digest(unsigned char   *pszInput,   unsigned   long   nInputSize,   unsigned char   *pszOutPut)
 {
   MD5_CTX   context;
-  unsigned   int   len   =   strlen   (pszInput);
+  //unsigned   int   len   =   strlen   (pszInput);
 
   MD5Init   (&context);
-  MD5Update   (&context,   (unsigned   char   *)pszInput,   len);
+  MD5Update   (&context,   pszInput,   nInputSize);
   MD5Final   (pszOutPut,   &context);
 }

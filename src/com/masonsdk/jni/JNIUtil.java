@@ -9,7 +9,7 @@ public class JNIUtil {
 	private static String pwd;
 	public static String getPwd(Context con){
 		if (pwd==null) {
-			pwd=getPwdOriginal(con);
+			pwd=getPwdOriginal(con).substring(8, 24);
 		}
 		return pwd;
 	}
