@@ -1,5 +1,4 @@
 #include <jni.h>
-#include "md5.c"
 #define UTF_8 "UTF-8"
 #ifdef __cplusplus
 
