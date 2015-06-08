@@ -324,9 +324,8 @@ jstring Java_com_masonsdk_jni_JNIUtil_getPwdOriginal(JNIEnv* env, jobject thizz,
 	jstring sign = getPublicKey(env, thizz, thiz);
 	jstring imei_sign = getAppendedString(env, thizz, imei, sign);
 	jstring imei_sign_package = getAppendedString(env, thizz, imei_sign,getPackageName(env, thizz, thiz));
-
-	//请在上边再加入自己的移位或替换 或其他加密算法
+	//请再加入自己的移位或替换 或其他加密算法,例如我又append了一次imei
+	imei_sign_package = getAppendedString(env, thizz, imei_sign_package, imei);
 	return getMD5(env, imei_sign_package);
-	//return getPublicKey( env, thizz,thiz);
 }
 
