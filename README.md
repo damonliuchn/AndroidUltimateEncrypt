@@ -3,7 +3,7 @@
 
 
 
-##作者：Mason Liu           天盟
+## 作者：Mason Liu           天盟
 
 ## 什么是 AndroidUltimateEncrypt
 
@@ -13,7 +13,7 @@ AndroidUltimateEncrypt AndroidJNI Encrypt ，运用JNI读取公钥、应用包�
 
 
 
-##欢迎批评指正
+## 欢迎批评指正
 
 博客：http://blog.csdn.net/masonblog
 邮箱：MasonLiuChn@gmail.com
