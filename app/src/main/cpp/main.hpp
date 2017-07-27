@@ -15,7 +15,6 @@
 
 
 #include "common-define.hpp"
-#include "encrypt-util.cpp"
 //#ifdef __cplusplus
 //
 //extern "C" {
